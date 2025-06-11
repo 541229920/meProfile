@@ -1,0 +1,36 @@
+.InfoPage {
+  max-width: 180px;
+  position: relative;
+}
+.info-header {
+  // box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90vh;
+  position: sticky;
+  top: 20px;
+  bottom: 20px;
+
+  img {
+    width: 100%;
+  }
+
+  
+}
+
+@media screen and (max-width: 768px) {
+  .InfoPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    display: none;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
