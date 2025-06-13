@@ -1,6 +1,6 @@
 import "./info.less";
 import { useState } from "react";
-import { BtnOnLogout } from "../../components/OtherEvent";
+import { BtnOnLogout } from "../../components/ButtonComp";
 
 const InfoPage = () => {
   const [fallbackUrl] = useState(

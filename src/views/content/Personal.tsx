@@ -4,6 +4,12 @@ import { Typography, Flex, Rate } from "antd";
 
 const { Title, Paragraph, Text, Link } = Typography;
 
+interface WorkersInfoProps {
+  title?: string;
+  description: string;
+  content: any;
+}
+
 const HeaderInfo: React.FC = () => {
   function getCookie(name: string) {
     const match = document.cookie.match(
@@ -27,7 +33,7 @@ const HeaderInfo: React.FC = () => {
               🎉<i>{getCookieSetUsername()}</i>的简历
             </Title>
           </Paragraph>
-          <p className="header-info">
+          <div className="header-info">
             <Paragraph strong>HR/面试官,您好✨</Paragraph>
             <Paragraph>
               😄非常荣幸能够得到您的赏识浏览我的个人主页，让我为您介绍下我的主页。
@@ -40,7 +46,7 @@ const HeaderInfo: React.FC = () => {
               <br />
               接下来就介绍下个人资料和一些技能吧😁希望能够给您留下深刻的印象！
             </Paragraph>
-          </p>
+          </div>
           <Flex gap="center" align="center">
             <Text strong>❤给网站评个分吧：</Text>
             <Rate allowClear={false} count={5} />
@@ -51,16 +57,21 @@ const HeaderInfo: React.FC = () => {
   );
 };
 
-const WorkersInfo: React.FC = () => {
+const WorkersInfo: React.FC<WorkersInfoProps> = ({
+  title,
+  description,
+  content,
+}) => {
   return (
     <>
       <Typography>
         <Paragraph>
-          <Title level={3}>⛽工作经历</Title>
+          <Title level={4} style={{marginTop:'0'}}>{title}</Title>
+          <Text style={{fontSize:'14px',color:'gray'}}>{description}</Text>
         </Paragraph>
-         <Paragraph>
-          <Title level={5}>税务局</Title>
-         </Paragraph>
+        <Paragraph>
+          {content}
+        </Paragraph>
       </Typography>
     </>
   );
